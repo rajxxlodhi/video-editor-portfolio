@@ -1,3 +1,5 @@
+import momentVideo from "../assets/make_moment_in_picture_202604291349_1.mp4";
+
 export const profile = {
   name: "Rajkumar Lodhi",
   role: "Video Editor",
@@ -98,8 +100,8 @@ export const projects = [
       "A short product advertisement designed using clean product shots, punchy pacing, animated typography, and platform-ready motion graphics.",
     thumbnailUrl: "https://images.unsplash.com/photo-1627384113710-424c9181eb2d?auto=format&fit=crop&w=900&q=80",
     videoUrl: "https://drive.google.com/file/d/1kYHOKlpapgWf_tfhIi6D_7wcS2mqKaxE/view?usp=drive_link",
-    beforeVideoUrl: "src\assets\make_moment_in_picture_202604291349_1.mp4",
-    afterVideoUrl: "src\assets\make_moment_in_picture_202604291349_1.mp4",
+    beforeVideoUrl: momentVideo,
+    afterVideoUrl: momentVideo,
     toolsUsed: ["CapCut Pro", "Premiere Pro", "After Effects"],
     timeline: "3 days",
     challenge: "Make a simple product visual feel clean, premium, and scroll-stopping.",

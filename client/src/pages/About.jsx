@@ -3,6 +3,7 @@ import CTASection from "../components/CTASection";
 import PageTransition from "../components/PageTransition";
 import SectionHeader from "../components/SectionHeader";
 import SEO from "../components/SEO";
+import profileImage from "../assets/ChatGPT Image Feb 26, 2026, 12_15_40 PM.png";
 import { profile, skills, tools, whyChooseMe } from "../data/profile";
 
 const stats = [
@@ -43,7 +44,7 @@ const About = () => (
       <div className="container-page section-padding grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
         <div className="hero-name-card overflow-hidden rounded-[8px] p-4 text-black">
           <img
-            src="src\assets\ChatGPT Image Feb 26, 2026, 12_15_40 PM.png"
+            src={profileImage}
             alt="Rajkumar Lodhi profile visual"
             className="aspect-[4/5] w-full rounded-[8px] object-cover grayscale"
             loading="lazy"

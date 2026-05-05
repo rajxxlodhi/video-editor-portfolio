@@ -1,6 +1,7 @@
 import { ArrowDown, Mail, Play } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import profileImage from "../assets/ChatGPT Image Feb 26, 2026, 12_15_40 PM.png";
 import { profile, tools } from "../data/profile";
 
 const HeroVideo = () => (
@@ -42,7 +43,7 @@ const HeroVideo = () => (
           </div>
           <div className="aspect-[4/5] overflow-hidden rounded-[8px] bg-neutral-950">
             <img
-              src="src\assets\ChatGPT Image Feb 26, 2026, 12_15_40 PM.png"
+              src={profileImage}
               alt="Rajkumar Lodhi video editing profile visual"
               className="h-full w-full object-cover grayscale"
               loading="eager"
