@@ -37,13 +37,13 @@ const Contact = () => {
               </a>
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a className="grid h-11 w-11 place-items-center rounded-[8px] border border-white/10 text-fog hover:border-electric hover:text-electric" href={import.meta.env.VITE_INSTAGRAM_URL || "#"} aria-label="Instagram">
+              <a className="grid h-11 w-11 place-items-center rounded-[8px] border border-white/10 text-fog hover:border-electric hover:text-electric" href={import.meta.env.VITE_INSTAGRAM_URL || profile.socials.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
                 <Instagram size={19} />
               </a>
-              <a className="grid h-11 w-11 place-items-center rounded-[8px] border border-white/10 text-fog hover:border-electric hover:text-electric" href={import.meta.env.VITE_YOUTUBE_URL || "#"} aria-label="YouTube">
+              <a className="grid h-11 w-11 place-items-center rounded-[8px] border border-white/10 text-fog hover:border-electric hover:text-electric" href={import.meta.env.VITE_YOUTUBE_URL || profile.socials.youtube} target="_blank" rel="noreferrer" aria-label="YouTube">
                 <Youtube size={19} />
               </a>
-              <a className="grid h-11 w-11 place-items-center rounded-[8px] border border-white/10 text-fog hover:border-electric hover:text-electric" href={import.meta.env.VITE_LINKEDIN_URL || "#"} aria-label="LinkedIn">
+              <a className="grid h-11 w-11 place-items-center rounded-[8px] border border-white/10 text-fog hover:border-electric hover:text-electric" href={import.meta.env.VITE_LINKEDIN_URL || profile.socials.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
                 <Linkedin size={19} />
               </a>
               <a className="grid h-11 w-11 place-items-center rounded-[8px] border border-white/10 text-fog hover:border-electric hover:text-electric" href={import.meta.env.VITE_BEHANCE_URL || "#"} aria-label="Behance">

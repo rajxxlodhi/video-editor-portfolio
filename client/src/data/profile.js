@@ -8,6 +8,11 @@ export const profile = {
   location: "India",
   experience: "2+ years",
   headline: "Video Editing & Motion Graphics Portfolio 2026",
+  socials: {
+    linkedin: "https://www.linkedin.com/in/rajkumar-lodhi-90181b339?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    instagram: "https://www.instagram.com/ll._.raj_.ll/?hl=en",
+    youtube: "https://www.youtube.com/@rajvlogs21"
+  },
   intro:
     "I am a creative and detail-oriented video editor with 2+ years of experience in crafting engaging and high-quality video content. I specialize in editing for social media, promotional content, and cinematic visuals that capture attention and boost audience engagement.",
   shortIntro:
