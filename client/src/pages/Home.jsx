@@ -14,7 +14,7 @@ const YouTubeShortCard = ({ short, index }) => (
   <article className="project-strip">
     <div className="container-page grid gap-8 py-14 lg:grid-cols-[0.72fr_1fr] lg:items-center">
       <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-        <div className="project-phone mx-auto aspect-[9/16] w-full max-w-[330px] overflow-hidden bg-black">
+        <div className="project-phone mx-auto aspect-[9/16] w-full max-w-[330px] overflow-hidden bg-ink">
           <iframe
             className="h-full w-full"
             src={getEmbedUrl(short.id)}
@@ -59,12 +59,12 @@ const Home = () => (
     />
     <HeroVideo />
 
-    <section id="who-am-i" className="relative overflow-hidden bg-[#1b1b1b] py-20 sm:py-28">
+    <section id="who-am-i" className="relative overflow-hidden bg-ink py-20 sm:py-28">
       <div className="small-dot-grid absolute inset-0 opacity-30" />
       <div className="container-page relative grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-center">
         <div className="hidden lg:block">
           <div className="h-px w-48 rotate-[-18deg] bg-white/40" />
-          <div className="scribble-note mt-20 inline-block px-8 py-4 text-sm font-black text-white/80">
+          <div className="scribble-note mt-20 inline-block border-accent px-8 py-4 text-sm font-black text-accent">
             Do you want me on project?
           </div>
         </div>
@@ -81,7 +81,7 @@ const Home = () => (
             {skills.slice(0, 7).map((skill) => (
               <span
                 key={skill}
-                className="rounded-full border border-white/12 px-4 py-2 text-xs font-black uppercase tracking-wide text-white/80"
+                className="rounded-full border border-electric/20 px-4 py-2 text-xs font-black uppercase tracking-wide text-fog"
               >
                 {skill}
               </span>
@@ -91,7 +91,7 @@ const Home = () => (
       </div>
     </section>
 
-    <section className="bg-[#1b1b1b] pb-8">
+    <section className="bg-ink pb-8">
       <div className="container-page border-t border-white/10 pt-12 text-center">
         <p className="text-xs font-black uppercase tracking-[0.28em] text-white/45">Selected Shorts</p>
         <h2 className="mt-3 text-4xl font-black uppercase leading-none text-white sm:text-6xl">
@@ -110,7 +110,7 @@ const Home = () => (
     <section className="light-editorial relative overflow-hidden py-24 sm:py-32">
       <div className="container-page relative grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <div>
-          <p className="text-xs font-black uppercase tracking-[0.28em] text-white/80">Workflow</p>
+          <p className="text-xs font-black uppercase tracking-[0.28em] text-electric">Workflow</p>
           <h2 className="repeat-title mt-5">
             Edit.
             <br />
@@ -118,16 +118,16 @@ const Home = () => (
             <br />
             Repeat.
           </h2>
-          <div className="scribble-note mt-7 inline-block border-black px-7 py-3 text-sm font-black text-black">
+          <div className="scribble-note mt-7 inline-block border-accent px-7 py-3 text-sm font-black text-accent">
             Ready to make scroll-stopping edits? Let's roll.
           </div>
         </div>
         <div className="grid gap-5">
-          <div className="rounded-[8px] bg-black p-6 text-white shadow-soft-black">
+          <div className="rounded-[8px] border border-electric/20 bg-ink p-6 text-white shadow-soft-black">
             <h3 className="text-2xl font-black">Why choose me?</h3>
             <div className="mt-5 grid gap-3">
               {whyChooseMe.map((item) => (
-                <div key={item} className="flex items-center gap-3 text-sm font-bold text-white/80">
+                <div key={item} className="flex items-center gap-3 text-sm font-bold text-fog">
                   <span className="h-2 w-2 rounded-full bg-electric" />
                   {item}
                 </div>
@@ -139,10 +139,10 @@ const Home = () => (
               <Link
                 key={service.title}
                 to={`/contact?service=${encodeURIComponent(service.title)}`}
-                className="rounded-[8px] border border-black/12 bg-white p-5 text-black transition hover:-translate-y-1 hover:shadow-soft-black"
+                className="rounded-[8px] border border-electric/20 bg-white/[0.06] p-5 text-softtext transition hover:-translate-y-1 hover:border-accent hover:shadow-soft-black"
               >
                 <h3 className="text-xl font-black leading-tight">{service.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-black/60">{service.description}</p>
+                <p className="mt-3 text-sm leading-6 text-fog">{service.description}</p>
               </Link>
             ))}
           </div>
@@ -150,9 +150,9 @@ const Home = () => (
       </div>
     </section>
 
-    <section className="bg-black py-14">
+    <section className="bg-ink py-14">
       <div className="container-page flex flex-col items-center gap-5 text-center">
-        <span className="grid h-12 w-12 place-items-center rounded-full bg-electric text-black">
+        <span className="grid h-12 w-12 place-items-center rounded-full bg-primary-gradient text-ink">
           <Mail size={20} />
         </span>
         <h2 className="text-xl font-black text-white">{profile.headline}</h2>

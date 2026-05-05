@@ -42,25 +42,25 @@ const About = () => (
 
     <section className="portfolio-hero pt-32">
       <div className="container-page section-padding grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-        <div className="hero-name-card overflow-hidden rounded-[8px] p-4 text-black">
+        <div className="hero-name-card overflow-hidden rounded-[8px] p-4 text-softtext">
           <img
             src={profileImage}
             alt="Rajkumar Lodhi profile visual"
             className="aspect-[4/5] w-full rounded-[8px] object-cover grayscale"
             loading="lazy"
           />
-          <p className="mt-4 text-xs font-black uppercase tracking-[0.22em] text-black/55">{profile.role}</p>
-          <h1 className="mt-1 text-3xl font-black uppercase text-black">{profile.name}</h1>
+          <p className="mt-4 text-xs font-black uppercase tracking-[0.22em] text-fog">{profile.role}</p>
+          <h1 className="mt-1 text-3xl font-black uppercase text-softtext">{profile.name}</h1>
         </div>
-        <div className="text-black lg:pb-24">
-          <p className="text-xs font-black uppercase tracking-[0.28em] text-black/50">About me</p>
+        <div className="text-softtext lg:pb-24">
+          <p className="text-xs font-black uppercase tracking-[0.28em] text-electric">About me</p>
           <h2 className="mt-4 text-balance text-4xl font-black uppercase leading-none sm:text-6xl">
             Creative, detail-oriented, and built for modern video.
           </h2>
-          <p className="mt-6 text-lg leading-8 text-black/70">{profile.intro}</p>
+          <p className="mt-6 text-lg leading-8 text-fog">{profile.intro}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             {whyChooseMe.map((item) => (
-              <span key={item} className="rounded-full border border-black/15 bg-white/70 px-4 py-2 text-xs font-black uppercase text-black/70">
+              <span key={item} className="rounded-full border border-electric/20 bg-white/[0.06] px-4 py-2 text-xs font-black uppercase text-fog">
                 {item}
               </span>
             ))}
@@ -69,7 +69,7 @@ const About = () => (
       </div>
     </section>
 
-    <section className="section-padding bg-[#1b1b1b]">
+    <section className="section-padding bg-ink">
       <div className="container-page">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat) => {
@@ -86,7 +86,7 @@ const About = () => (
       </div>
     </section>
 
-    <section className="section-padding bg-[#202020]">
+    <section className="section-padding bg-charcoal">
       <div className="container-page grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
         <SectionHeader
           eyebrow="Skills"
@@ -109,7 +109,7 @@ const About = () => (
         <SectionHeader eyebrow="Tools" title="Software and creative tools I use." tone="light" />
         <div className="flex flex-wrap gap-3">
           {tools.map((tool) => (
-            <span key={tool} className="rounded-full border border-black/15 bg-white px-5 py-3 text-sm font-black uppercase text-black">
+            <span key={tool} className="rounded-full border border-electric/20 bg-white/[0.06] px-5 py-3 text-sm font-black uppercase text-softtext">
               {tool}
             </span>
           ))}
@@ -117,7 +117,7 @@ const About = () => (
       </div>
     </section>
 
-    <section className="section-padding bg-[#1b1b1b]">
+    <section className="section-padding bg-ink">
       <div className="container-page">
         <SectionHeader eyebrow="Experience" title="2+ years of practical editing experience." />
         <div className="grid gap-5">

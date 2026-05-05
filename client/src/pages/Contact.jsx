@@ -12,7 +12,7 @@ const Contact = () => {
   return (
     <PageTransition>
       <SEO title="Contact Rajkumar Lodhi" description="Contact Rajkumar Lodhi for reels, shorts, promotional videos, cinematic edits, thumbnails, and social media design." />
-      <section className="bg-[#1b1b1b] pt-32">
+      <section className="bg-ink pt-32">
         <div className="container-page section-padding grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <SectionHeader
@@ -20,7 +20,7 @@ const Contact = () => {
               title="Let's create your next scroll-stopping edit."
               description="Share the raw clips, platform, deadline, and style reference. Rajkumar will reply with a clean plan for the edit."
             />
-            <div className="scribble-note mb-8 inline-block px-7 py-3 text-sm font-black text-white/80">
+            <div className="scribble-note mb-8 inline-block border-accent px-7 py-3 text-sm font-black text-accent">
               Fast delivery / Gen Z style / high-quality output
             </div>
             <div className="mt-8 grid gap-3">

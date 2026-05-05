@@ -13,13 +13,13 @@ const navItems = [
 ];
 
 const linkClass = ({ isActive }) =>
-  `text-sm font-black uppercase tracking-wide transition hover:text-electric ${isActive ? "text-electric" : "text-white/80"}`;
+  `text-sm font-black uppercase tracking-wide transition hover:text-electric ${isActive ? "text-electric" : "text-softtext/80"}`;
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/90 backdrop-blur-xl">
       <div className="container-page flex h-20 items-center justify-between">
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <span className="grid h-10 w-10 place-items-center rounded-[8px] border border-electric/50 bg-electric/10 text-sm font-black text-electric">

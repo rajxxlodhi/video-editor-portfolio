@@ -6,7 +6,7 @@ import { profile, tools } from "../data/profile";
 
 const HeroVideo = () => (
   <section className="portfolio-hero relative min-h-screen overflow-hidden pt-20">
-    <div className="absolute right-6 top-28 hidden text-[10px] font-black uppercase tracking-[0.22em] text-black/45 md:block">
+    <div className="absolute right-6 top-28 hidden text-[10px] font-black uppercase tracking-[0.22em] text-fog md:block">
       Scroll down
     </div>
 
@@ -22,7 +22,7 @@ const HeroVideo = () => (
           <span>tfo</span>
           <span>lio</span>
         </h1>
-        <div className="hero-name-card absolute bottom-5 left-[44%] hidden rounded-full px-5 py-2 text-xs font-black uppercase tracking-[0.16em] text-black md:block">
+        <div className="hero-name-card absolute bottom-5 left-[44%] hidden rounded-full px-5 py-2 text-xs font-black uppercase tracking-[0.16em] text-softtext md:block">
           {profile.name}
         </div>
       </motion.div>
@@ -33,13 +33,13 @@ const HeroVideo = () => (
         transition={{ duration: 0.75, delay: 0.1, ease: "easeOut" }}
         className="grid gap-6 lg:justify-items-end"
       >
-        <div className="hero-name-card w-full max-w-md rounded-[8px] p-5 text-black">
+        <div className="hero-name-card w-full max-w-md rounded-[8px] p-5 text-softtext">
           <div className="mb-5 flex items-center justify-between gap-4">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.24em] text-black/55">{profile.role}</p>
+              <p className="text-xs font-black uppercase tracking-[0.24em] text-fog">{profile.role}</p>
               <h2 className="mt-1 text-2xl font-black uppercase">{profile.name}</h2>
             </div>
-            <span className="rounded-full border border-black/20 px-3 py-1 text-xs font-black">2026</span>
+            <span className="rounded-full border border-electric/30 px-3 py-1 text-xs font-black text-electric">2026</span>
           </div>
           <div className="aspect-[4/5] overflow-hidden rounded-[8px] bg-neutral-950">
             <img
@@ -49,10 +49,10 @@ const HeroVideo = () => (
               loading="eager"
             />
           </div>
-          <p className="mt-5 text-sm leading-6 text-black/70">{profile.shortIntro}</p>
+          <p className="mt-5 text-sm leading-6 text-fog">{profile.shortIntro}</p>
           <div className="mt-5 flex flex-wrap gap-2">
             {tools.slice(0, 4).map((tool) => (
-              <span key={tool} className="rounded-full border border-black/15 px-3 py-1 text-xs font-black uppercase text-black/70">
+              <span key={tool} className="rounded-full border border-electric/25 px-3 py-1 text-xs font-black uppercase text-fog">
                 {tool}
               </span>
             ))}

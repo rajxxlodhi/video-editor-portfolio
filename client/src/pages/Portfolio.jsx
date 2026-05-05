@@ -16,7 +16,7 @@ const PortfolioShort = ({ short, index }) => {
     <article className="project-strip">
       <div className="container-page grid gap-8 py-14 lg:grid-cols-[0.72fr_1fr] lg:items-center">
         <div className={flip ? "lg:order-2" : ""}>
-          <div className="project-phone mx-auto aspect-[9/16] w-full max-w-[330px] overflow-hidden bg-black">
+          <div className="project-phone mx-auto aspect-[9/16] w-full max-w-[330px] overflow-hidden bg-ink">
             <iframe
               className="h-full w-full"
               src={getEmbedUrl(short.id)}

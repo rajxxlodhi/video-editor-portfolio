@@ -71,20 +71,20 @@ const ProjectDetails = () => {
             Back to work
           </Link>
           <div className="grid gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
-            <div className="text-black">
+            <div className="text-softtext">
               <p className="eyebrow mb-4">{project.category}</p>
               <h1 className="text-balance text-4xl font-black leading-tight sm:text-6xl">{project.title}</h1>
-              <p className="mt-5 max-w-3xl text-lg leading-8 text-black/70">{project.description}</p>
+              <p className="mt-5 max-w-3xl text-lg leading-8 text-fog">{project.description}</p>
             </div>
-            <div className="grid gap-3 rounded-[8px] border border-black/10 bg-white/60 p-5 text-black">
-              <p className="text-sm text-black/65">Client: <strong className="text-black">{project.clientName}</strong></p>
-              <p className="flex items-center gap-2 text-sm text-black/65">
+            <div className="grid gap-3 rounded-[8px] border border-electric/20 bg-white/[0.06] p-5 text-softtext">
+              <p className="text-sm text-fog">Client: <strong className="text-softtext">{project.clientName}</strong></p>
+              <p className="flex items-center gap-2 text-sm text-fog">
                 <Clock size={16} />
-                Timeline: <strong className="text-black">{project.timeline}</strong>
+                Timeline: <strong className="text-softtext">{project.timeline}</strong>
               </p>
-              <p className="flex items-center gap-2 text-sm text-black/65">
+              <p className="flex items-center gap-2 text-sm text-fog">
                 <Sparkles size={16} />
-                Tools: <strong className="text-black">{tools.join(", ")}</strong>
+                Tools: <strong className="text-softtext">{tools.join(", ")}</strong>
               </p>
             </div>
           </div>
@@ -101,7 +101,7 @@ const ProjectDetails = () => {
         </div>
       </section>
 
-      <section className="section-padding bg-[#202020]">
+      <section className="section-padding bg-charcoal">
         <div className="container-page">
           <div className="grid gap-6 lg:grid-cols-3">
             <div className="glass-card rounded-[8px] p-6">
@@ -127,7 +127,7 @@ const ProjectDetails = () => {
       </section>
 
       {related.length ? (
-        <section className="section-padding bg-[#202020]">
+        <section className="section-padding bg-charcoal">
           <div className="container-page">
             <SectionHeader eyebrow="Related projects" title="More work in this category." />
             <ProjectGrid projects={related} onPreview={setPreview} />

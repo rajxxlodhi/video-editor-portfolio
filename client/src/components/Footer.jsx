@@ -6,7 +6,7 @@ const Footer = () => {
   const email = import.meta.env.VITE_CONTACT_EMAIL || profile.email;
 
   return (
-    <footer className="border-t border-white/10 bg-black">
+    <footer className="border-t border-white/10 bg-ink">
       <div className="container-page grid gap-10 py-12 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <div className="mb-4 flex items-center gap-3">
