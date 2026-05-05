@@ -50,3 +50,41 @@ export const youtubeShorts = [
     url: "https://youtube.com/shorts/DyxxN5HHJHM?si=eiRTtdb1sFKIKcop"
   }
 ];
+
+export const portfolioShorts = [
+  {
+    id: "nNd1Vc6w9i8",
+    title: "Edit 1",
+    url: "https://youtube.com/shorts/nNd1Vc6w9i8?si=aAF7VyTmOEdKVsTg"
+  },
+  {
+    id: "QmCCjxxHs_o",
+    title: "Edit 2",
+    url: "https://youtube.com/shorts/QmCCjxxHs_o?si=-aaEx4K4ObriIA-L"
+  },
+  {
+    id: "0VGOVCOHNpo",
+    title: "Edit 3",
+    url: "https://youtube.com/shorts/0VGOVCOHNpo?si=ZnBGatBQkmFpXSUV"
+  },
+  {
+    id: "C6DmrLioYl4",
+    title: "Edit 4",
+    url: "https://youtube.com/shorts/C6DmrLioYl4?si=y_QOgt83AjzZzPV3"
+  },
+  {
+    id: "4idEqCQmMxc",
+    title: "Edit 5",
+    url: "https://youtube.com/shorts/4idEqCQmMxc?si=gmJ-j4-rBRpqHz5J"
+  },
+  {
+    id: "FlisvMLZVIA",
+    title: "Edit 6",
+    url: "https://youtube.com/shorts/FlisvMLZVIA?si=fO4I6su1T6eWkaRx"
+  },
+  {
+    id: "3hCp32wuXLM",
+    title: "Edit 7",
+    url: "https://youtube.com/shorts/3hCp32wuXLM?si=fOA7gQQ5BRHPD_OT"
+  }
+];
