@@ -1,6 +1,6 @@
 # Rajkumar Lodhi Video Editing Portfolio
 
-A complete MERN stack portfolio website for Rajkumar Lodhi, a video editor focused on reels, shorts, promotional videos, cinematic edits, thumbnails, and AI-assisted editing. It includes a Behance-inspired editorial public website, MongoDB-backed API, JWT-protected admin dashboard, contact submissions, sample data, and Cloudinary-ready media uploads.
+A complete MERN stack portfolio website for Rajkumar Lodhi, a video editor focused on reels, shorts, promotional videos, cinematic edits, thumbnails, and AI-assisted editing. It includes a Behance-inspired editorial public website, MongoDB-backed API, contact submissions, sample data, and Cloudinary-ready media storage support.
 
 ## Tech Stack
 
@@ -19,10 +19,8 @@ A complete MERN stack portfolio website for Rajkumar Lodhi, a video editor focus
 ```txt
 client/
   src/
-    admin/
     api/
     components/
-    context/
     pages/
     styles/
     App.jsx
@@ -44,19 +42,10 @@ server/
 
 - Full-screen muted autoplay hero video
 - Responsive black/white editorial portfolio theme inspired by modern Behance case studies
-- Portfolio filters and video preview modal
-- Project detail pages with case study sections
-- Before/after video comparison
+- Autoplaying YouTube Shorts portfolio sections
 - Services with delivery time, revisions, pricing, and booking CTA
 - Testimonials with video testimonial support
 - Contact form saved to MongoDB
-- Admin login/logout
-- Protected admin routes
-- Add, edit, and delete portfolio projects
-- Add, edit, and delete services
-- Add, edit, and delete testimonials
-- View contact submissions
-- Cloudinary signed upload helper for images and videos
 - Lazy image/video loading and skeleton states
 - SEO-friendly document titles and meta descriptions
 
@@ -140,14 +129,11 @@ PowerShell-safe command:
 npm.cmd run seed
 ```
 
-This creates:
+This creates backend sample data:
 
-- 1 admin user
 - 6 portfolio projects
 - 6 services
 - 4 testimonials
-
-Default admin credentials come from `server/.env`.
 
 ## Run Development Servers
 
@@ -171,12 +157,6 @@ Backend:
 
 ```txt
 http://localhost:5000
-```
-
-Admin:
-
-```txt
-http://localhost:5173/admin/login
 ```
 
 ## API Routes
@@ -217,14 +197,14 @@ http://localhost:5173/admin/login
 
 - `POST /api/upload/signature`
 
-The upload route is protected and returns a signed Cloudinary upload payload. The admin dashboard uses it to upload thumbnails, project videos, before/after videos, testimonial images, and testimonial videos.
+The upload route is protected and returns a signed Cloudinary upload payload for future media-management workflows.
 
 ## Production Notes
 
 - Use a hosted MongoDB provider such as MongoDB Atlas.
 - Use a strong `JWT_SECRET`.
 - Restrict `CLIENT_URL` to the deployed frontend domain.
-- Configure Cloudinary credentials before using admin uploads.
+- Configure Cloudinary credentials before using protected upload APIs.
 - Put the backend behind HTTPS in production.
 - For large videos, keep grid cards thumbnail-only and upload compressed preview files for fast loading.
 

@@ -37,9 +37,6 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <NavLink to="/admin" className="ghost-button px-4 py-2">
-            Admin
-          </NavLink>
           <NavLink to="/contact" className="premium-button px-4 py-2">
             Hire Rajkumar
           </NavLink>
@@ -63,9 +60,6 @@ const Navbar = () => {
                 {item.label}
               </NavLink>
             ))}
-            <NavLink to="/admin" className="ghost-button mt-2" onClick={() => setOpen(false)}>
-              Admin Dashboard
-            </NavLink>
           </div>
         </div>
       ) : null}
