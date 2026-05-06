@@ -17,11 +17,7 @@ const HeroVideo = () => (
         transition={{ duration: 0.75, ease: "easeOut" }}
         className="relative"
       >
-        <h1 className="stacked-title" aria-label="Portfolio">
-          <span>Por</span>
-          <span>tfo</span>
-          <span>lio</span>
-        </h1>
+        <h1 className="stacked-title" aria-label="Portfolio">Portfolio</h1>
         <div className="hero-name-card absolute bottom-5 left-[44%] hidden rounded-full px-5 py-2 text-xs font-black uppercase tracking-[0.16em] text-softtext md:block">
           {profile.name}
         </div>

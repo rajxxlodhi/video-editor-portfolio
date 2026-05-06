@@ -89,16 +89,12 @@ video {
 
 .stacked-title {
   color: #EAEAEA;
-  font-size: clamp(5rem, 18vw, 15rem);
+  font-size: clamp(2.9rem, 13vw, 11rem);
   font-weight: 1000;
-  line-height: 0.72;
+  line-height: 0.9;
   letter-spacing: 0;
   text-transform: uppercase;
-  
-}
-
-.stacked-title span {
-  display: block;
+  white-space: nowrap;
 }
 
 .hero-name-card {
