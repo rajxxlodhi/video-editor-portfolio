@@ -7,7 +7,7 @@ const Footer = () => {
 
   return (
     <footer className="border-t border-white/10 bg-ink">
-      <div className="container-page grid gap-10 py-12 md:grid-cols-[1.4fr_1fr_1fr]">
+      <div className="container-page grid gap-8 py-10 sm:py-12 md:grid-cols-[1.4fr_1fr_1fr] lg:gap-10 lg:py-14">
         <div>
           <div className="mb-4 flex items-center gap-3">
             <span className="grid h-10 w-10 place-items-center rounded-[8px] border border-electric/50 bg-electric/10 text-sm font-black text-electric">
@@ -15,7 +15,7 @@ const Footer = () => {
             </span>
             <span className="text-sm font-black uppercase tracking-[0.22em] text-white">{profile.name}</span>
           </div>
-          <p className="max-w-md leading-7 text-fog">
+          <p className="max-w-md text-sm leading-7 text-fog sm:text-base">
             {profile.shortIntro}
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
@@ -55,7 +55,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="border-t border-white/10 py-5 text-center text-xs text-fog">
+      <div className="border-t border-white/10 px-4 py-5 text-center text-xs text-fog">
         (c) {new Date().getFullYear()} {profile.name}. Video Editing & Motion Graphics Portfolio.
       </div>
     </footer>

@@ -5,32 +5,21 @@ import profileImage from "../assets/ChatGPT Image Feb 26, 2026, 12_15_40 PM.png"
 import { profile, tools } from "../data/profile";
 
 const HeroVideo = () => (
-  <section className="portfolio-hero relative min-h-screen overflow-hidden pt-20">
+  <section className="portfolio-hero relative min-h-[100svh] overflow-hidden pt-20">
     <div className="absolute right-6 top-28 hidden text-[10px] font-black uppercase tracking-[0.22em] text-fog md:block">
       Scroll down
     </div>
 
-    <div className="container-page relative z-10 grid min-h-[calc(100vh-5rem)] gap-10 py-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-      <motion.div
-        initial={{ opacity: 0, x: -24 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.75, ease: "easeOut" }}
-        className="relative"
-      >
-        <h1 className="stacked-title" aria-label="Portfolio">Portfolio</h1>
-        <div className="hero-name-card absolute bottom-5 left-[44%] hidden rounded-full px-5 py-2 text-xs font-black uppercase tracking-[0.16em] text-softtext md:block">
-          {profile.name}
-        </div>
-      </motion.div>
-
+    <div className="container-page relative z-10 flex min-h-[calc(100svh-5rem)] flex-col items-center justify-center gap-6 py-8 text-center sm:gap-8 sm:py-10 lg:gap-10">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.75, delay: 0.1, ease: "easeOut" }}
-        className="grid gap-6 lg:justify-items-end"
+        transition={{ duration: 0.75, ease: "easeOut" }}
+        className="hero-profile-stage"
       >
-        <div className="hero-name-card w-full max-w-md rounded-[8px] p-5 text-softtext">
-          <div className="mb-5 flex items-center justify-between gap-4">
+        <h1 className="stacked-title" aria-label="Portfolio">Portfolio</h1>
+        <div className="hero-profile-card hero-name-card w-full max-w-[22rem] rounded-[8px] p-4 text-left text-softtext sm:max-w-md sm:p-5">
+          <div className="mb-5 flex items-center justify-between gap-4 text-left">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.24em] text-fog">{profile.role}</p>
               <h2 className="mt-1 text-2xl font-black uppercase">{profile.name}</h2>
@@ -54,22 +43,27 @@ const HeroVideo = () => (
             ))}
           </div>
         </div>
+      </motion.div>
 
-        <div className="w-full max-w-md text-white lg:text-right">
-          <p className="text-xs font-black uppercase tracking-[0.28em] text-electric">Video editing / motion graphics</p>
-          <h2 className="mt-4 text-balance text-3xl font-black leading-none sm:text-5xl">
-            Trend-based edits with cinematic polish.
-          </h2>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:justify-end">
-            <Link className="premium-button" to="/portfolio">
-              <Play size={18} fill="currentColor" />
-              See Work
-            </Link>
-            <Link className="ghost-button" to="/contact">
-              <Mail size={18} />
-              Contact Me
-            </Link>
-          </div>
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.75, delay: 0.12, ease: "easeOut" }}
+        className="w-full max-w-3xl text-center text-white"
+      >
+        <p className="text-xs font-black uppercase tracking-[0.28em] text-electric">Video editing / motion graphics</p>
+        <h2 className="mx-auto mt-4 max-w-2xl text-balance text-3xl font-black leading-none sm:text-4xl lg:text-5xl">
+          Trend-based edits with cinematic polish.
+        </h2>
+        <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+          <Link className="premium-button" to="/portfolio">
+            <Play size={18} fill="currentColor" />
+            See Work
+          </Link>
+          <Link className="ghost-button" to="/contact">
+            <Mail size={18} />
+            Contact Me
+          </Link>
         </div>
       </motion.div>
     </div>

@@ -28,7 +28,7 @@ const VideoCard = ({ project, onPreview }) => (
         </span>
       </div>
     </button>
-    <div className="p-5">
+    <div className="p-4 sm:p-5">
       <div className="mb-2 flex items-center justify-between gap-3">
         <p className="text-sm text-fog">{project.clientName}</p>
         {project.featured ? <span className="text-xs font-bold uppercase tracking-wide text-violet">Featured</span> : null}

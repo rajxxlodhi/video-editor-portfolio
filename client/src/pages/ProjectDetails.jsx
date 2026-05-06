@@ -54,8 +54,10 @@ const ProjectDetails = () => {
   if (error || !project) {
     return (
       <PageTransition>
-        <section className="container-page section-padding pt-32">
-          <div className="glass-card rounded-[8px] p-8 text-center text-red-200">{error || "Project not found."}</div>
+        <section className="bg-ink page-hero">
+          <div className="container-page pb-14 pt-8 sm:pb-16 sm:pt-10 md:pb-20 lg:pb-24">
+            <div className="glass-card rounded-[8px] p-6 text-center text-red-200 sm:p-8">{error || "Project not found."}</div>
+          </div>
         </section>
       </PageTransition>
     );
@@ -64,17 +66,17 @@ const ProjectDetails = () => {
   return (
     <PageTransition>
       <SEO title={project.title} description={project.description} />
-      <section className="portfolio-hero pt-32">
-        <div className="container-page section-padding">
-          <Link to="/portfolio" className="mb-8 inline-flex items-center gap-2 text-sm font-bold text-electric">
+      <section className="portfolio-hero page-hero">
+        <div className="container-page pb-14 pt-8 sm:pb-16 sm:pt-10 md:pb-20 lg:pb-24">
+          <Link to="/portfolio" className="mb-6 inline-flex items-center gap-2 text-sm font-bold text-electric sm:mb-8">
             <ArrowLeft size={17} />
             Back to work
           </Link>
-          <div className="grid gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
+          <div className="grid gap-8 lg:grid-cols-[1.25fr_0.75fr] lg:items-end lg:gap-10">
             <div className="text-softtext">
               <p className="eyebrow mb-4">{project.category}</p>
-              <h1 className="text-balance text-4xl font-black leading-tight sm:text-6xl">{project.title}</h1>
-              <p className="mt-5 max-w-3xl text-lg leading-8 text-fog">{project.description}</p>
+              <h1 className="text-balance text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">{project.title}</h1>
+              <p className="mt-4 max-w-3xl text-base leading-8 text-fog sm:mt-5 sm:text-lg">{project.description}</p>
             </div>
             <div className="grid gap-3 rounded-[8px] border border-electric/20 bg-white/[0.06] p-5 text-softtext">
               <p className="text-sm text-fog">Client: <strong className="text-softtext">{project.clientName}</strong></p>
@@ -104,15 +106,15 @@ const ProjectDetails = () => {
       <section className="section-padding bg-charcoal">
         <div className="container-page">
           <div className="grid gap-6 lg:grid-cols-3">
-            <div className="glass-card rounded-[8px] p-6">
+            <div className="glass-card rounded-[8px] p-5 sm:p-6">
               <h2 className="mb-4 text-2xl font-black text-white">Challenge</h2>
               <p className="leading-7 text-fog">{project.challenge}</p>
             </div>
-            <div className="glass-card rounded-[8px] p-6">
+            <div className="glass-card rounded-[8px] p-5 sm:p-6">
               <h2 className="mb-4 text-2xl font-black text-white">Edit Process</h2>
               <p className="leading-7 text-fog">{project.editProcess}</p>
             </div>
-            <div className="glass-card rounded-[8px] p-6">
+            <div className="glass-card rounded-[8px] p-5 sm:p-6">
               <h2 className="mb-4 text-2xl font-black text-white">Results</h2>
               <p className="leading-7 text-fog">{project.results}</p>
             </div>

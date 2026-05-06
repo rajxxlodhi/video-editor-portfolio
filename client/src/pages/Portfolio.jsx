@@ -14,13 +14,15 @@ const PortfolioShort = ({ short, index }) => {
 
   return (
     <article className="project-strip">
-      <div className="container-page grid gap-8 py-14 lg:grid-cols-[0.72fr_1fr] lg:items-center">
+      <div className="container-page grid gap-7 py-10 sm:gap-8 sm:py-12 lg:grid-cols-[0.72fr_1fr] lg:items-center lg:py-14">
         <div className={flip ? "lg:order-2" : ""}>
-          <div className="project-phone mx-auto aspect-[9/16] w-full max-w-[330px] overflow-hidden bg-ink">
+          <div className="project-phone mx-auto aspect-[9/16] w-full max-w-[19.5rem] overflow-hidden bg-ink sm:max-w-[20.625rem]">
             <iframe
               className="h-full w-full"
               src={getEmbedUrl(short.id)}
               title={short.title}
+              loading={index < 2 ? "eager" : "lazy"}
+              referrerPolicy="strict-origin-when-cross-origin"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             />
@@ -31,7 +33,7 @@ const PortfolioShort = ({ short, index }) => {
           <p className="mb-3 text-xs font-black uppercase tracking-[0.28em] text-electric">
             Portfolio Short #{index + 1}
           </p>
-          <h2 className="text-balance break-words text-4xl font-black leading-none text-white sm:text-6xl">
+          <h2 className="text-balance break-words text-3xl font-black leading-none text-white sm:text-5xl lg:text-6xl">
             {short.title}
           </h2>
           <p className="mt-5 max-w-xl text-sm leading-7 text-white/60 lg:text-base">
@@ -59,8 +61,8 @@ const Portfolio = () => (
       description="Rajkumar Lodhi portfolio videos with autoplaying YouTube Shorts for reels, shorts, ads, and cinematic edits."
     />
 
-    <section className="portfolio-hero pt-32">
-      <div className="container-page section-padding">
+    <section className="portfolio-hero page-hero">
+      <div className="container-page pb-14 pt-8 sm:pb-16 sm:pt-10 md:pb-20 lg:pb-24">
         <SectionHeader
           eyebrow="Portfolio"
           title="Selected Work"

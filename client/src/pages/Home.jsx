@@ -1,4 +1,5 @@
-import { ArrowRight, ExternalLink, Mail } from "lucide-react";
+import { ExternalLink, Mail } from "lucide-react";
+import { memo, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import CTASection from "../components/CTASection";
 import HeroVideo from "../components/HeroVideo";
@@ -10,26 +11,66 @@ import { youtubeShorts } from "../data/youtubeShorts";
 const getEmbedUrl = (id) =>
   `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&playsinline=1&loop=1&playlist=${id}&controls=1&rel=0&modestbranding=1`;
 
-const YouTubeShortCard = ({ short, index }) => (
-  <article className="project-strip">
-    <div className="container-page grid gap-8 py-14 lg:grid-cols-[0.72fr_1fr] lg:items-center">
-      <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-        <div className="project-phone mx-auto aspect-[9/16] w-full max-w-[330px] overflow-hidden bg-ink">
-          <iframe
-            className="h-full w-full"
-            src={getEmbedUrl(short.id)}
-            title={short.title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
+const LazyShortFrame = ({ short, eager }) => {
+  const frameRef = useRef(null);
+  const [shouldLoad, setShouldLoad] = useState(eager);
+
+  useEffect(() => {
+    if (shouldLoad) return undefined;
+
+    if (!("IntersectionObserver" in window)) {
+      setShouldLoad(true);
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoad(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "480px 0px" }
+    );
+
+    if (frameRef.current) observer.observe(frameRef.current);
+
+    return () => observer.disconnect();
+  }, [shouldLoad]);
+
+  return (
+    <div ref={frameRef} className="project-phone mx-auto aspect-[9/16] w-full max-w-[19.5rem] overflow-hidden bg-ink sm:max-w-[20.625rem]">
+      {shouldLoad ? (
+        <iframe
+          className="h-full w-full"
+          src={getEmbedUrl(short.id)}
+          title={short.title}
+          loading={eager ? "eager" : "lazy"}
+          referrerPolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        />
+      ) : (
+        <div className="flex h-full w-full items-center justify-center bg-neutral-950 text-xs font-black uppercase tracking-[0.22em] text-white/45">
+          Loading edit
         </div>
+      )}
+    </div>
+  );
+};
+
+const YouTubeShortCard = memo(({ short, index }) => (
+  <article className="project-strip">
+    <div className="container-page grid gap-7 py-10 sm:gap-8 sm:py-12 lg:grid-cols-[0.72fr_1fr] lg:items-center lg:py-14">
+      <div className={index % 2 === 1 ? "lg:order-2" : ""}>
+        <LazyShortFrame short={short} eager={index < 2} />
       </div>
 
       <div className={index % 2 === 1 ? "lg:order-1 lg:text-right" : ""}>
         <p className="mb-3 text-xs font-black uppercase tracking-[0.28em] text-electric">
           YouTube Short #{index + 1}
         </p>
-        <h3 className="text-balance break-words text-3xl font-black leading-none text-white sm:text-5xl">
+        <h3 className="text-balance break-words text-3xl font-black leading-none text-white sm:text-4xl lg:text-5xl">
           {short.title}
         </h3>
         <p className="mt-5 max-w-xl text-sm leading-7 text-white/60 lg:text-base">
@@ -49,7 +90,9 @@ const YouTubeShortCard = ({ short, index }) => (
       </div>
     </div>
   </article>
-);
+));
+
+YouTubeShortCard.displayName = "YouTubeShortCard";
 
 const Home = () => (
   <PageTransition>
@@ -59,9 +102,9 @@ const Home = () => (
     />
     <HeroVideo />
 
-    <section id="who-am-i" className="relative overflow-hidden bg-ink py-20 sm:py-28">
+    <section id="who-am-i" className="section-padding relative overflow-hidden bg-ink">
       <div className="small-dot-grid absolute inset-0 opacity-30" />
-      <div className="container-page relative grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-center">
+      <div className="container-page relative grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-center lg:gap-10">
         <div className="hidden lg:block">
           <div className="h-px w-48 rotate-[-18deg] bg-white/40" />
           <div className="scribble-note mt-20 inline-block border-accent px-8 py-4 text-sm font-black text-accent">
@@ -70,13 +113,13 @@ const Home = () => (
         </div>
         <div>
           <p className="text-xs font-black uppercase tracking-[0.28em] text-white/40">Who am I</p>
-          <div className="mt-4 flex flex-wrap items-end gap-x-5 gap-y-2">
-            <span className="text-6xl font-black leading-none text-white/30 sm:text-8xl">"</span>
+          <div className="mt-4 flex flex-wrap items-end gap-x-4 gap-y-2 sm:gap-x-5">
+            <span className="text-5xl font-black leading-none text-white/30 sm:text-7xl lg:text-8xl">"</span>
             <h2 className="editorial-mark text-white">
               WHO <span className="outline-word">AM I</span>
             </h2>
           </div>
-          <p className="mt-8 max-w-3xl text-base leading-8 text-white/65 sm:text-lg">{profile.intro}</p>
+          <p className="mt-6 max-w-3xl text-base leading-8 text-white/65 sm:mt-8 sm:text-lg">{profile.intro}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             {skills.slice(0, 7).map((skill) => (
               <span
@@ -91,10 +134,10 @@ const Home = () => (
       </div>
     </section>
 
-    <section className="bg-ink pb-8">
-      <div className="container-page border-t border-white/10 pt-12 text-center">
+    <section className="bg-ink py-10 sm:py-12">
+      <div className="container-page border-t border-white/10 pt-10 text-center sm:pt-12">
         <p className="text-xs font-black uppercase tracking-[0.28em] text-white/45">Selected Shorts</p>
-        <h2 className="mt-3 text-4xl font-black uppercase leading-none text-white sm:text-6xl">
+        <h2 className="mt-3 text-4xl font-black uppercase leading-none text-white sm:text-5xl lg:text-6xl">
           My Videos
         </h2>
         <div className="mx-auto mt-3 h-px w-48 rotate-[-7deg] bg-white/70" />
@@ -107,8 +150,8 @@ const Home = () => (
       ))}
     </section>
 
-    <section className="light-editorial relative overflow-hidden py-24 sm:py-32">
-      <div className="container-page relative grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+    <section className="section-padding light-editorial relative overflow-hidden">
+      <div className="container-page relative grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-14">
         <div>
           <p className="text-xs font-black uppercase tracking-[0.28em] text-electric">Workflow</p>
           <h2 className="repeat-title mt-5">
@@ -150,7 +193,7 @@ const Home = () => (
       </div>
     </section>
 
-    <section className="bg-ink py-14">
+    <section className="bg-ink py-12 sm:py-14">
       <div className="container-page flex flex-col items-center gap-5 text-center">
         <span className="grid h-12 w-12 place-items-center rounded-full bg-primary-gradient text-ink">
           <Mail size={20} />

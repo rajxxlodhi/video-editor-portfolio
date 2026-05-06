@@ -32,8 +32,8 @@ const Services = () => {
   return (
     <PageTransition>
       <SEO title="Services" description="Rajkumar Lodhi video editing services for Instagram Reels, YouTube Shorts, promotional videos, cinematic editing, and thumbnails." />
-      <section className="light-editorial pt-32">
-        <div className="container-page section-padding">
+      <section className="light-editorial page-hero">
+        <div className="container-page pb-14 pt-8 sm:pb-16 sm:pt-10 md:pb-20 lg:pb-24">
           <SectionHeader
             eyebrow="Services"
             title="Editing services built for short-form speed and cinematic finish."
@@ -48,7 +48,7 @@ const Services = () => {
         <div className="container-page">
           {loading ? <Loader label="Loading services" /> : null}
           {!loading ? (
-            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <div className="grid gap-5 md:grid-cols-2 lg:gap-6 xl:grid-cols-3">
               {services.map((service) => (
                 <ServiceCard key={service._id || service.title} service={service} />
               ))}

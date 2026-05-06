@@ -20,15 +20,15 @@ const Navbar = () => {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/90 backdrop-blur-xl">
-      <div className="container-page flex h-20 items-center justify-between">
-        <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="grid h-10 w-10 place-items-center rounded-[8px] border border-electric/50 bg-electric/10 text-sm font-black text-electric">
+      <div className="container-page flex h-16 items-center justify-between sm:h-20">
+        <Link to="/" className="flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}>
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-[8px] border border-electric/50 bg-electric/10 text-xs font-black text-electric sm:h-10 sm:w-10 sm:text-sm">
             RL
           </span>
-          <span className="text-sm font-black uppercase tracking-[0.22em] text-white">{profile.name}</span>
+          <span className="truncate text-xs font-black uppercase tracking-[0.16em] text-white sm:text-sm sm:tracking-[0.22em]">{profile.name}</span>
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="hidden items-center gap-5 xl:gap-7 lg:flex">
           {navItems.map((item) => (
             <NavLink key={item.to} to={item.to} className={linkClass}>
               {item.label}
@@ -44,7 +44,7 @@ const Navbar = () => {
 
         <button
           aria-label={open ? "Close navigation" : "Open navigation"}
-          className="grid h-11 w-11 place-items-center rounded-[8px] border border-white/10 text-white lg:hidden"
+          className="grid h-10 w-10 shrink-0 place-items-center rounded-[8px] border border-white/10 text-white sm:h-11 sm:w-11 lg:hidden"
           onClick={() => setOpen((value) => !value)}
           type="button"
         >

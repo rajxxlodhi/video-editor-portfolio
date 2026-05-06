@@ -32,8 +32,8 @@ const Testimonials = () => {
   return (
     <PageTransition>
       <SEO title="Testimonials" description="Client feedback for Rajkumar Lodhi video editing, reels, shorts, and promotional videos." />
-      <section className="portfolio-hero pt-32">
-        <div className="container-page section-padding">
+      <section className="portfolio-hero page-hero">
+        <div className="container-page pb-14 pt-8 sm:pb-16 sm:pt-10 md:pb-20 lg:pb-24">
           <SectionHeader
             eyebrow="Testimonials"
             title="Feedback from creators and brands."
@@ -48,7 +48,7 @@ const Testimonials = () => {
         <div className="container-page">
           {loading ? <Loader label="Loading testimonials" /> : null}
           {!loading ? (
-            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <div className="grid gap-5 md:grid-cols-2 lg:gap-6 xl:grid-cols-3">
               {testimonials.map((testimonial) => (
                 <TestimonialCard key={testimonial._id || testimonial.clientName} testimonial={testimonial} />
               ))}

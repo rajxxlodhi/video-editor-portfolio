@@ -49,8 +49,8 @@ const ContactForm = () => {
   };
 
   return (
-    <form className="glass-card rounded-[8px] p-5 sm:p-7" onSubmit={submit}>
-      <div className="grid gap-4 sm:grid-cols-2">
+    <form className="glass-card rounded-[8px] p-5 sm:p-6 lg:p-7" onSubmit={submit}>
+      <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
         <input className="input-field" name="name" placeholder="Name" value={form.name} onChange={updateField} required />
         <input className="input-field" name="email" placeholder="Email" type="email" value={form.email} onChange={updateField} required />
         <input className="input-field" name="phone" placeholder="Phone" value={form.phone} onChange={updateField} />
@@ -65,7 +65,7 @@ const ContactForm = () => {
         </select>
       </div>
       <textarea
-        className="input-field mt-4 min-h-40"
+        className="input-field mt-3 min-h-36 sm:mt-4 sm:min-h-40"
         name="message"
         placeholder="Tell me about the footage, deadline, platforms, and style."
         value={form.message}
@@ -77,7 +77,7 @@ const ContactForm = () => {
           {status.message}
         </div>
       ) : null}
-      <button className="premium-button mt-5 w-full" disabled={loading} type="submit">
+      <button className="premium-button mt-4 w-full sm:mt-5" disabled={loading} type="submit">
         {loading ? "Sending..." : "Send Project Inquiry"}
       </button>
     </form>

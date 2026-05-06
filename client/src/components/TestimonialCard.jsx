@@ -19,14 +19,14 @@ const TestimonialCard = ({ testimonial }) => (
     ) : (
       <img src={testimonial.imageUrl} alt={testimonial.clientName} className="h-56 w-full object-cover" loading="lazy" />
     )}
-    <div className="p-6">
+    <div className="p-5 sm:p-6">
       <div className="mb-4 flex gap-1 text-electric">
         {Array.from({ length: testimonial.rating }).map((_, index) => (
           <Star key={index} size={17} fill="currentColor" />
         ))}
       </div>
       <p className="leading-7 text-fog">"{testimonial.feedback}"</p>
-      <div className="mt-6 border-t border-white/10 pt-5">
+      <div className="mt-5 border-t border-white/10 pt-5 sm:mt-6">
         <h3 className="font-black text-white">{testimonial.clientName}</h3>
         <p className="text-sm text-fog">{testimonial.company}</p>
       </div>
