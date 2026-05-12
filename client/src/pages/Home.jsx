@@ -9,10 +9,10 @@ import { profile, services, skills, tools, whyChooseMe } from "../data/profile";
 import { featuredVideo, youtubeShorts } from "../data/youtubeShorts";
 
 const getEmbedUrl = (id) =>
-  `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&playsinline=1&loop=1&playlist=${id}&controls=1&rel=0&modestbranding=1`;
+  `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&playsinline=1&loop=1&playlist=${id}&controls=0&rel=0&modestbranding=1`;
 
 const getWideEmbedUrl = (id) =>
-  `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&playsinline=1&loop=1&playlist=${id}&controls=1&rel=0&modestbranding=1`;
+  `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&playsinline=1&loop=1&playlist=${id}&controls=0&rel=0&modestbranding=1`;
 
 const LazyShortFrame = ({ short, eager }) => {
   const frameRef = useRef(null);
