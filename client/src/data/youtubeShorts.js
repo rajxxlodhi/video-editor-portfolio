@@ -1,3 +1,9 @@
+export const featuredVideo = {
+  id: "KhTf22UptmI",
+  title: "I phon 17 animation",
+  url: "https://youtu.be/KhTf22UptmI?si=iaE2jQSGBlp6ExeT"
+};
+
 export const youtubeShorts = [
   {
     id: "3hCp32wuXLM",

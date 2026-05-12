@@ -6,9 +6,12 @@ import HeroVideo from "../components/HeroVideo";
 import PageTransition from "../components/PageTransition";
 import SEO from "../components/SEO";
 import { profile, services, skills, tools, whyChooseMe } from "../data/profile";
-import { youtubeShorts } from "../data/youtubeShorts";
+import { featuredVideo, youtubeShorts } from "../data/youtubeShorts";
 
 const getEmbedUrl = (id) =>
+  `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&playsinline=1&loop=1&playlist=${id}&controls=1&rel=0&modestbranding=1`;
+
+const getWideEmbedUrl = (id) =>
   `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&playsinline=1&loop=1&playlist=${id}&controls=1&rel=0&modestbranding=1`;
 
 const LazyShortFrame = ({ short, eager }) => {
@@ -101,6 +104,43 @@ const Home = () => (
       description="Rajkumar Lodhi video editing and motion graphics portfolio for reels, shorts, ads, cinematic edits, and social content."
     />
     <HeroVideo />
+
+    <section className="section-padding bg-ink">
+      <div className="container-page">
+        <div className="mb-8 text-center sm:mb-10">
+          <p className="text-xs font-black uppercase tracking-[0.28em] text-electric">Main Video</p>
+          <h2 className="mt-3 text-balance text-3xl font-black uppercase leading-none text-white sm:text-4xl lg:text-5xl">
+            {featuredVideo.title}
+          </h2>
+        </div>
+
+        <div className="overflow-hidden rounded-[8px] border border-electric/20 bg-black shadow-soft-black">
+          <div className="aspect-video w-full">
+            <iframe
+              className="h-full w-full"
+              src={getWideEmbedUrl(featuredVideo.id)}
+              title={featuredVideo.title}
+              loading="eager"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+        </div>
+
+        <div className="mt-6 flex justify-center">
+          <a
+            className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-white hover:text-electric"
+            href={featuredVideo.url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open original
+            <ExternalLink size={17} />
+          </a>
+        </div>
+      </div>
+    </section>
 
     <section id="who-am-i" className="section-padding relative overflow-hidden bg-ink">
       <div className="small-dot-grid absolute inset-0 opacity-30" />
