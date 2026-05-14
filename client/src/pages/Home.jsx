@@ -6,13 +6,46 @@ import HeroVideo from "../components/HeroVideo";
 import PageTransition from "../components/PageTransition";
 import SEO from "../components/SEO";
 import { profile, services, skills, tools, whyChooseMe } from "../data/profile";
-import { featuredVideo, youtubeShorts } from "../data/youtubeShorts";
+import { featuredVideos, youtubeShorts } from "../data/youtubeShorts";
 
 const getEmbedUrl = (id) =>
   `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&playsinline=1&loop=1&playlist=${id}&controls=0&rel=0&modestbranding=1`;
 
 const getWideEmbedUrl = (id) =>
   `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&playsinline=1&loop=1&playlist=${id}&controls=0&rel=0&modestbranding=1`;
+
+const FeaturedVideoCard = ({ video, eager = false }) => (
+  <article className="overflow-hidden rounded-[8px] border border-electric/20 bg-black shadow-soft-black">
+    <div className="aspect-video w-full">
+      <iframe
+        className="h-full w-full"
+        src={getWideEmbedUrl(video.id)}
+        title={video.title}
+        loading={eager ? "eager" : "lazy"}
+        referrerPolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+      />
+    </div>
+    <div className="flex items-center justify-between gap-4 px-4 py-4 sm:px-5">
+      <div>
+        <p className="text-[11px] font-black uppercase tracking-[0.24em] text-electric">Top video</p>
+        <h3 className="mt-2 text-lg font-black uppercase leading-tight text-white sm:text-xl">
+          {video.title}
+        </h3>
+      </div>
+      <a
+        className="shrink-0 inline-flex items-center gap-2 text-xs font-black uppercase tracking-wide text-white hover:text-electric sm:text-sm"
+        href={video.url}
+        target="_blank"
+        rel="noreferrer"
+      >
+        Open
+        <ExternalLink size={16} />
+      </a>
+    </div>
+  </article>
+);
 
 const LazyShortFrame = ({ short, eager }) => {
   const frameRef = useRef(null);
@@ -108,36 +141,16 @@ const Home = () => (
     <section className="section-padding bg-ink">
       <div className="container-page">
         <div className="mb-8 text-center sm:mb-10">
-          <p className="text-xs font-black uppercase tracking-[0.28em] text-electric">Main Video</p>
+          <p className="text-xs font-black uppercase tracking-[0.28em] text-electric">Top Videos</p>
           <h2 className="mt-3 text-balance text-3xl font-black uppercase leading-none text-white sm:text-4xl lg:text-5xl">
-            {featuredVideo.title}
+            Featured Work
           </h2>
         </div>
 
-        <div className="overflow-hidden rounded-[8px] border border-electric/20 bg-black shadow-soft-black">
-          <div className="aspect-video w-full">
-            <iframe
-              className="h-full w-full"
-              src={getWideEmbedUrl(featuredVideo.id)}
-              title={featuredVideo.title}
-              loading="eager"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </div>
-        </div>
-
-        <div className="mt-6 flex justify-center">
-          <a
-            className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-white hover:text-electric"
-            href={featuredVideo.url}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Open original
-            <ExternalLink size={17} />
-          </a>
+        <div className="grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
+          {featuredVideos.map((video, index) => (
+            <FeaturedVideoCard key={video.id} video={video} eager={index === 0} />
+          ))}
         </div>
       </div>
     </section>

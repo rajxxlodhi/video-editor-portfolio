@@ -1,8 +1,20 @@
-export const featuredVideo = {
-  id: "KhTf22UptmI",
-  title: "I phon 17 animation",
-  url: "https://youtu.be/KhTf22UptmI?si=iaE2jQSGBlp6ExeT"
-};
+export const featuredVideos = [
+  {
+    id: "KhTf22UptmI",
+    title: "I phon 17 animation",
+    url: "https://youtu.be/KhTf22UptmI?si=iaE2jQSGBlp6ExeT"
+  },
+  {
+    id: "25TXI1f7c4A",
+    title: "Featured edit 2",
+    url: "https://youtu.be/25TXI1f7c4A?si=ooec8JfxyT69TWLq"
+  },
+  {
+    id: "yBNh5XpNov4",
+    title: "Featured edit 3",
+    url: "https://youtu.be/yBNh5XpNov4?si=gBBfZeEasY9vNKzc"
+  }
+];
 
 export const youtubeShorts = [
   {
