@@ -38,9 +38,9 @@ export const youtubeShorts = [
     url: "https://youtube.com/shorts/y1usk5z_x2o?si=V11Gy5jU8UaB1JPi"
   },
   {
-    id: "y1usk5z_x2o",
+    id: "gmfQiS-Gios",
     title: "Edit 5",
-    url: "https://youtube.com/shorts/y1usk5z_x2o?si=V11Gy5jU8UaB1JPi"
+    url: "https://youtube.com/shorts/gmfQiS-Gios?si=oPSpKk-96Y8fB5gR"
   },
   {
     id: "D8fEzS6b86M",
@@ -93,7 +93,7 @@ export const portfolioShorts = [
   {
     id: "4idEqCQmMxc",
     title: "Edit 5",
-    url: "https://youtube.com/shorts/4idEqCQmMxc?si=gmJ-j4-rBRpqHz5J"
+    url: "https://youtube.com/shorts/gmfQiS-Gios?si=oPSpKk-96Y8fB5gR"
   },
   {
     id: "FlisvMLZVIA",
@@ -106,3 +106,4 @@ export const portfolioShorts = [
     url: "https://youtube.com/shorts/3hCp32wuXLM?si=fOA7gQQ5BRHPD_OT"
   }
 ];
+t
